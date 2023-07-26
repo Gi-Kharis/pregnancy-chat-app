@@ -1,4 +1,17 @@
-.App {
+#body-bg-img, #chatbgimage{
+  background-image: url("/Users/gifty/Desktop/MyProjects/ChatApp/chatapp/public/media/background.png");
+  background-size: cover;
+  height: 800px;
+  width: 1600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+
+}
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +48,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
