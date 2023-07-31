@@ -55,7 +55,7 @@ useEffect(()=>{
 //     event.preventDefault();
 //     if (inputs.trim() !== "") {
 //         setMessages([...messages, inputs]);
-//         console.log(messages)
+//        
 //         // setInputs("");
 //       }
 
