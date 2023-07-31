@@ -20,7 +20,7 @@ useEffect(()=>{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": "Bearer process.env.CHATGPT_KEY"
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
