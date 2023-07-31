@@ -1,50 +1,85 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Link } from "react-router-dom";
 
 // import SenderDiv from './SenderDiv';
 import { useState } from 'react';
 import UserChatDiv from './UserChatDiv';
+import SenderDiv from './SenderDiv';
 
-function ChatArea(prop) {
+  function ChatArea(prop) {
     
 const [inputs, setInputs] = useState("")
 const [messages, setMessages] = useState([])
+const [chatData, setChatData] = useState([])
+// const [messagesR, setMessagesR] = useState([])
 
 
+useEffect(()=>{
 
-fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer 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"
-    },
-    body: JSON.stringify({
-        "model": "gpt-3.5-turbo",
-        "messages": [{"role": "system", "content": "You are a helpful assistant."},{"role": "user", "content": inputs}]
+    fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer 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"
+        },
+        body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{"role": "system", "content": "You are a helpful assistant."},{"role": "user", "content": inputs}]
+           
+    
+        })
+    
     })
+    .then(response =>  response.json())
+    .then(data => {
+        setMessages([...messages, { content: data.choices[0].message.content, timestamp: new Date().toISOString() }]);
+        // setChatData([...chatData, data.choices[0].message.content ])
+    console.log(messages ); // read the server response
+        
+    });
 
-})
-.then(response => response.json())
-.then(data => {
-    console.log(data); // read the server response
-});
+},[inputs])
 
 
-function handleUserInput(event){
-    event.preventDefault();
-    setInputs(event.target.value) 
-}
+
+
+
+
+// function handleUserInput(event){
+//     event.preventDefault();
+//     setInputs(event.target.value) 
+// }
  
 
-function handleSubmit (event){
-    event.preventDefault();
-    if (inputs.trim() !== "") {
-        setMessages([...messages, inputs]);
-        setInputs("");
-      }
+// function handleSubmit (event){
+//     event.preventDefault();
+//     if (inputs.trim() !== "") {
+//         setMessages([...messages, inputs]);
+//         console.log(messages)
+//         // setInputs("");
+//       }
 
     
-}
+// }
+
+
+function handleUserInput(event) {
+    event.preventDefault();
+    setInputs(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (inputs.trim() !== "") {
+      // Store the message with the current timestamp
+      setMessages([...messages, { content: inputs, timestamp: new Date().toISOString() }]);
+      setInputs("");
+    }
+  }
+
+  const sortedMessages = [...messages].sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+
+
     return (
     <>
         <div className="bg-[#F4F2F2] h-[760px] w-[1225px] mt-5">
@@ -59,14 +94,19 @@ function handleSubmit (event){
 
             <div className="bg-[#E4E4E4] flex h-[60px] w-[1225px] absolute bottom-[20px] justify-center">
                 <form onSubmit={handleSubmit}> 
-                    <input onChange={handleUserInput} id="messagebox" placeholder = "Type message here" value={inputs} className="bg-[#F4F2F2] text-xs pl-2 h-[35px] w-[500px] rounded-lg mt-3 mr-2 shadow-lg"/>
-                    <input type="submit" defaultValue="Send" className="bg-[#1C754E] mt-3 p-2 text-center shadow-lg rounded-lg w-[100px] text-white text-[14px] h-[35px] cursor-pointer"/>
+                    <input onChange={handleUserInput} id="messagebox" placeholder = "Type message here" value={inputs} className="bg-[#F4F2F2] text-xs pl-2 h-[35px] w-[500px] rounded-lg mt-3 mr-2 shadow-lg focus:outline-none"/>
+                    <input type="submit" defaultValue="Send" className="bg-[#1C754E] mt-3 p-2 text-center shadow-lg rounded-lg w-[100px] text-white text-[14px] h-[35px] cursor-pointer "/>
                 </form>
             </div>
             
             <div className="flex-col ml-[350px] mt-5">
-                <UserChatDiv messages = {messages}/>
-               
+
+            {sortedMessages.map((message, index) => (
+                <div key={index} className="bg-[#E4E4E4] w-[500px] mb-5 text-green-900 text-sm p-3">
+                  {message.content}
+                </div>
+              ))}
+              
                
             </div>
         </div>
