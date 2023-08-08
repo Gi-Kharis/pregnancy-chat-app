@@ -1,0 +1,145 @@
+{
+    "PregnancyDietPlan": {
+        "FirstTrimester": {
+            "Meal1": {
+                "name": "Breakfast",
+                "items": [
+                    "Whole wheat toast with peanut butter",
+                    "Hard-boiled egg",
+                    "Fruit (such as berries or sliced banana)",
+                    "Milk or calcium-fortified plant-based milk"
+                ]
+            },
+            "Meal2": {
+                "name": "Mid-Morning Snack",
+                "items": [
+                    "Greek yogurt with honey and granola",
+                    "Mixed nuts"
+                ]
+            },
+            "Meal3": {
+                "name": "Lunch",
+                "items": [
+                    "Grilled chicken breast with brown rice",
+                    "Steamed vegetables (such as broccoli, carrots, and bell peppers)",
+                    "Mixed greens salad with olive oil and vinegar dressing"
+                ]
+            },
+            "Meal4": {
+                "name": "Afternoon Snack",
+                "items": [
+                    "Hummus with whole wheat pita bread",
+                    "Sliced cucumbers and cherry tomatoes"
+                ]
+            },
+            "Meal5": {
+                "name": "Dinner",
+                "items": [
+                    "Baked salmon with quinoa",
+                    "Roasted sweet potatoes",
+                    "Sauteed spinach"
+                ]
+            },
+            "Meal6": {
+                "name": "Evening Snack",
+                "items": [
+                    "Fresh fruit smoothie",
+                    "Yogurt"
+                ]
+            }
+        },
+        "SecondTrimester": {
+            "Meal1": {
+                "name": "Breakfast",
+                "items": [
+                    "Oatmeal with sliced almonds and berries",
+                    "Boiled eggs",
+                    "Glass of orange juice"
+                ]
+            },
+            "Meal2": {
+                "name": "Mid-Morning Snack",
+                "items": [
+                    "Greek yogurt with sliced peaches",
+                    "Trail mix"
+                ]
+            },
+            "Meal3": {
+                "name": "Lunch",
+                "items": [
+                    "Grilled chicken or tofu wrap with whole wheat tortilla",
+                    "Mixed greens salad with avocado and lemon vinaigrette",
+                    "Baked sweet potato fries"
+                ]
+            },
+            "Meal4": {
+                "name": "Afternoon Snack",
+                "items": [
+                    "Cottage cheese with sliced cucumbers",
+                    "Homemade granola bars"
+                ]
+            },
+            "Meal5": {
+                "name": "Dinner",
+                "items": [
+                    "Lean beef or turkey meatballs with whole wheat pasta",
+                    "Roasted vegetables (such as zucchini, bell peppers, and eggplant)",
+                    "Caesar salad with grilled chicken and homemade dressing"
+                ]
+            },
+            "Meal6": {
+                "name": "Evening Snack",
+                "items": [
+                    "Vanilla yogurt with mixed nuts",
+                    "Sliced fruit"
+                ]
+            }
+        },
+        "ThirdTrimester": {
+            "Meal1": {
+                "name": "Breakfast",
+                "items": [
+                    "Whole grain cereal with milk or plant-based milk",
+                    "Banana",
+                    "Glass of freshly squeezed orange juice"
+                ]
+            },
+            "Meal2": {
+                "name": "Mid-Morning Snack",
+                "items": [
+                    "Cottage cheese with sliced peaches",
+                    "Rice cakes with almond butter"
+                ]
+            },
+            "Meal3": {
+                "name": "Lunch",
+                "items": [
+                    "Grilled salmon with quinoa salad (mixed with vegetables)",
+                    "Spinach and strawberry salad with balsamic vinaigrette"
+                ]
+            },
+            "Meal4": {
+                "name": "Afternoon Snack",
+                "items": [
+                    "Greek yogurt with honey and granola",
+                    "Mixed nuts"
+                ]
+            },
+            "Meal5": {
+                "name": "Dinner",
+                "items": [
+                    "Roasted chicken breast with brown rice",
+                    "Steamed vegetables (such as broccoli, carrots, and snow peas)",
+                    "Caesar salad with homemade dressing"
+                ]
+            },
+            "Meal6": {
+                "name": "Evening Snack",
+                "items": [
+                    "Fruit smoothie with spinach and almond milk",
+                    "Whole wheat crackers with cheese"
+                ]
+            }
+        }
+    }
+} Please note that this is a general diet plan and may require adjustments based on your specific dietary needs and any recommendations provided by your healthcare professional.
